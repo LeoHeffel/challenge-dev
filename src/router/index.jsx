@@ -1,11 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Cards from './components/Cards'
+import { createBrowserRouter } from "react-router-dom";
+import LayoutRoot from "../layout/LayoutRoot";
+import Cards from "../components/Cards";
 
 
- const fetched ={
+const fetched ={
     "data": {
       "characters": {
         "info": {
@@ -180,17 +178,16 @@ import Cards from './components/Cards'
     }
   }
 
-
-function App() {
- 
-  return (
-    < div className='container mx-auto px-4'>
-      <p>Rick and Morty</p>
-      <p>searchbar</p>
-      <p>filter</p>
-      <Cards characters={fetched.data.characters.results} />
-    </div>
-  )
-}
-
-export default App
+export const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <LayoutRoot/>,
+        children:[
+            {
+                index: true,
+                element: <Cards characters={fetched.data.characters.results}/>
+            },
+            
+        ]
+    }
+])
