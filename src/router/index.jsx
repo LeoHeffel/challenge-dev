@@ -14,10 +14,7 @@ export const router = createBrowserRouter([
                 index: true,
                 element: <Cards />
             },
-            {
-                path: '/:page',
-                element: <Cards  />
-            }
+          
         ]
     }
 ])

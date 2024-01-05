@@ -1,24 +1,15 @@
 import {useParams} from "react-router-dom"
 import Card from "./Card"
 import { useQuery, gql } from '@apollo/client';
-
-
+import { useContext } from "react";
+import { QueryContext } from "../context/queryContext";
 
 const Cards = () => {
-    const page = useParams().page || 1
     
-    const GET_CHARACTERS = gql`
-    query {
-        characters(filter: { name: "rick" }, page: ${page}) {
-          results {
-            id
-            name
-            image
-          }
-        }
-      }
-      
-  `;
+    const {GET_CHARACTERS} = useContext(QueryContext)
+
+
+    
   const { loading, error, data } = useQuery(GET_CHARACTERS);
       let characters =[];
     if (loading) return 'Loading...';
