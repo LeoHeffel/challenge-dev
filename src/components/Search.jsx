@@ -9,7 +9,7 @@ const Search = () => {
     const [search, setSearch] = useState("");
     const handeleSubmit = (e) => {
         e.preventDefault();
-        if(search.trim() === "") return;
+        if(search.trim() === "") setFilter(null);
         setFilter(`{name: "${search}"}`)
         setSearch("")
     }
