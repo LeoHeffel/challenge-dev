@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useQuery, gql } from '@apollo/client';
 
 
@@ -8,7 +8,9 @@ const QueryProvider = ({ children }) => {
    
     const [filter, setFilter] = useState(null)
     const [page, setPage] = useState(1)
+    const [detailsId, setDetailsId] = useState(null)
     
+
     const GET_CHARACTERS = gql`
     query {
         characters(filter: ${ filter }, page: ${page}) {
@@ -21,6 +23,9 @@ const QueryProvider = ({ children }) => {
       }
       
   `;
+ 
+
+
   const GET_PAGINATION = gql`
   query {
       characters(filter: ${ filter },page: ${page}) {
@@ -33,10 +38,33 @@ const QueryProvider = ({ children }) => {
       }
     }
   `;
+ 
+  const GET_CHARACTER = gql`
+  query {
+    character(id: ${detailsId}) {
+      name
+      status
+      species
+      type
+      gender
+      image
+      origin {
+        name
+        type
+        dimension
+      }
+      location {
+        name
+        dimension
+      }
+    }
+  }
+`;
 
+ 
 
     return (
-        <QueryContext.Provider value={{filter, setFilter, GET_CHARACTERS, GET_PAGINATION, page, setPage}}>
+        <QueryContext.Provider value={{filter, setFilter, GET_CHARACTERS, GET_PAGINATION, page, setPage, GET_CHARACTER, detailsId, setDetailsId }}>
             {children}
         </QueryContext.Provider>
     )

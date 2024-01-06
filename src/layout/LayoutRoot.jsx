@@ -9,7 +9,6 @@ const LayoutRoot= ()=>{
            <Search/>
            <Pagination/>
            <Outlet/>
-           <h1>pagination</h1>
         </div>
     )
 }

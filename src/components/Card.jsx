@@ -1,11 +1,13 @@
+import { useContext } from "react";
+import { QueryContext } from "../context/queryContext";
 
 const Card = ({character}) => {
-const {  name,   image} = character
-
+const {  name,  id, image} = character
+const {setDetailsId} = useContext(QueryContext)
   return (
     <div className=" rounded-lg shadow relative max-h-48 max-w-48">
  
-      <a href="#">
+      <button onClick={() => setDetailsId(id)} >
         <img 
             
           className="rounded-lg  max-h-48 "
@@ -18,7 +20,7 @@ const {  name,   image} = character
           </h6>
         </div>
         
-      </a>
+      </button>
      
     </div>
   );

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { QueryContext } from "../context/queryContext";
 const Search = () => {
 
-    const {setFilter} = useContext(QueryContext)
+    const {setFilter,setPage} = useContext(QueryContext)
 
 
     const [search, setSearch] = useState("");
@@ -11,11 +11,12 @@ const Search = () => {
         e.preventDefault();
         if(search.trim() === "") setFilter(null);
         setFilter(`{name: "${search}"}`)
+        setPage(1)
         setSearch("")
     }
 
   return (
-    <form onSubmit={handeleSubmit}>
+    <form onSubmit={handeleSubmit} className="mt-4">
       <label
         htmlFor="default-search"
         className="mb-2 text-sm font-medium  sr-only text-white"
@@ -44,7 +45,7 @@ const Search = () => {
           type="search"
           id="default-search"
           className="block w-full p-4 ps-10 text-smborder  rounded-lg   bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
-          placeholder="Search Mockups, Logos..."
+          placeholder="Search by name"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

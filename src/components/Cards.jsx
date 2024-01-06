@@ -3,10 +3,11 @@ import Card from "./Card"
 import { useQuery, gql } from '@apollo/client';
 import { useContext } from "react";
 import { QueryContext } from "../context/queryContext";
+import Details from "./Details";
 
 const Cards = () => {
     
-    const {GET_CHARACTERS} = useContext(QueryContext)
+    const {GET_CHARACTERS, detailsId} = useContext(QueryContext)
 
 
     
@@ -17,16 +18,19 @@ const Cards = () => {
     if (!loading) {
         characters =data.characters.results
     
-    return (
-       
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    return (<>
+    {detailsId&&
+        <div className=" top-0 left-0 w-screen h-screen z-50 absolute">
+            <Details  />
+        </div>} 
 
+       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
          { characters.map((character) => (
             <Card key={character.id} character={character} />
          ))}
         </div>
-
-    )}
+       </>
+      )}   
 }
 
 export default Cards
