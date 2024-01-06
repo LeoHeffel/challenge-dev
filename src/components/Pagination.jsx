@@ -1,6 +1,4 @@
-import { Link, useParams } from "react-router-dom";
-
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
 import { useContext } from "react";
 import { QueryContext } from "../context/queryContext";
@@ -28,9 +26,11 @@ const Pagination = () => {
         <div className="inline-flex mt-2 xs:mt-0">
           {/* Buttons */}
           <button
-            disabled={page<=1}
+            disabled={page <= 1}
             onClick={() => setPage(prev)}
-            className={`${page<=1 ? "cursor-not-allowed " : ""} flex  items-center justify-center px-4 h-10 text-base font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
+            className={`${
+              page <= 1 ? "cursor-not-allowed " : ""
+            } flex  items-center justify-center px-4 h-10 text-base font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
           >
             <svg
               className="w-3.5 h-3.5 me-2 rtl:rotate-180"
@@ -47,12 +47,14 @@ const Pagination = () => {
                 d="M13 5H1m0 0 4 4M1 5l4-4"
               />
             </svg>
-            Prev 
+            Prev
           </button>
           <button
-          disabled={page>= pages}
+            disabled={page >= pages}
             onClick={() => setPage(next)}
-            className={`${page >= pages ? "cursor-not-allowed " : ""} flex  items-center justify-center px-4 h-10 text-base font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
+            className={`${
+              page >= pages ? "cursor-not-allowed " : ""
+            } flex  items-center justify-center px-4 h-10 text-base font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
           >
             Next
             <svg

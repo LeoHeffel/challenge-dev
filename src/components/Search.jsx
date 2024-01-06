@@ -2,18 +2,16 @@ import { useState } from "react";
 import { useContext } from "react";
 import { QueryContext } from "../context/queryContext";
 const Search = () => {
+  const { setFilter, setPage } = useContext(QueryContext);
 
-    const {setFilter,setPage} = useContext(QueryContext)
-
-
-    const [search, setSearch] = useState("");
-    const handeleSubmit = (e) => {
-        e.preventDefault();
-        if(search.trim() === "") setFilter(null);
-        setFilter(`{name: "${search}"}`)
-        setPage(1)
-        setSearch("")
-    }
+  const [search, setSearch] = useState("");
+  const handeleSubmit = (e) => {
+    e.preventDefault();
+    if (search.trim() === "") setFilter(null);
+    setFilter(`{name: "${search}"}`);
+    setPage(1);
+    setSearch("");
+  };
 
   return (
     <form onSubmit={handeleSubmit} className="mt-4">
@@ -26,7 +24,8 @@ const Search = () => {
       <div className="relative">
         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
           <svg
-            className="w-4 h-4 text-gray-400"required
+            className="w-4 h-4 text-gray-400"
+            required
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -59,4 +58,4 @@ const Search = () => {
     </form>
   );
 };
-export default Search
+export default Search;

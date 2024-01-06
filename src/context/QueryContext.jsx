@@ -39,6 +39,8 @@ const QueryProvider = ({ children }) => {
     }
   `;
  
+
+
   const GET_CHARACTER = gql`
   query {
     character(id: ${detailsId}) {
@@ -61,7 +63,7 @@ const QueryProvider = ({ children }) => {
   }
 `;
 
- 
+
 
     return (
         <QueryContext.Provider value={{filter, setFilter, GET_CHARACTERS, GET_PAGINATION, page, setPage, GET_CHARACTER, detailsId, setDetailsId }}>

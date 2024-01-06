@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { QueryContext } from "../context/queryContext";
-import { useQuery  } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
 const Details = () => {
-    const {GET_CHARACTER, setDetailsId} = useContext(QueryContext)
+  const { GET_CHARACTER, setDetailsId } = useContext(QueryContext);
 
   const { loading, error, data } = useQuery(GET_CHARACTER);
-  let character ;
+  let character;
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
   if (!loading) {
@@ -53,7 +53,7 @@ const Details = () => {
             <button
               onClick={() => setDetailsId(null)}
               type="button"
-              className="ms-auto -mx-1.5 -my-1.5 justify-center items-center flex-shrink-0 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 text-gray-500 hover:text-white bg-gray-800 hover:bg-gray-700"
+              className="ms-auto -mx-1.5 -my-1.5 justify-center items-center flex-shrink-0 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5  inline-flex h-8 w-8 text-gray-500 hover:text-white bg-gray-800 hover:bg-gray-700"
               data-dismiss-target="#toast-message-cta"
               aria-label="Close"
             >
