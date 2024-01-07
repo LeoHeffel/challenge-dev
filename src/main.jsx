@@ -15,9 +15,9 @@ const client = new ApolloClient({
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <QueryProvider>
-    <ApolloProvider client={client}>
-      <RouterProvider router={router} />
-    </ApolloProvider>
+      <ApolloProvider client={client}>
+        <RouterProvider router={router} />
+      </ApolloProvider>
     </QueryProvider>
   </React.StrictMode>
 );
