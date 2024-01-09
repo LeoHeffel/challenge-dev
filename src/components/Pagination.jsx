@@ -17,10 +17,10 @@ const Pagination = () => {
     return (
       <div className="flex flex-col items-center my-4">
         {/* Help text */}
-        <span className="text-sm text-gray-700 text-gray-400">
+        <span className="text-sm text-gray-400">
           Showing <span className="font-semibold text-white">{page}</span> of{" "}
           <span className="font-semibold text-white">{pages}</span> of{" "}
-          <span className="font-semibold text-gray-900 text-white"></span>{" "}
+          <span className="font-semibold  text-white"></span>{" "}
           Pages
         </span>
         <div className="inline-flex mt-2 xs:mt-0">
