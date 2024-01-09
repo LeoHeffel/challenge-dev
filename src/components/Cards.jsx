@@ -3,13 +3,14 @@ import { useQuery } from "@apollo/client";
 import { useContext } from "react";
 import { QueryContext } from "../context/queryContext";
 import Details from "./Details";
+import { PushSpinner, StageSpinner } from "react-spinners-kit";
 
 const Cards = () => {
   const { GET_CHARACTERS, detailsId } = useContext(QueryContext);
 
   const { loading, error, data } = useQuery(GET_CHARACTERS);
   let characters = [];
-  if (loading) return "Loading...";
+
   if (error) return `Error! ${error.message}`;
   if (!loading) {
     characters = data.characters.results;
@@ -22,9 +23,9 @@ const Cards = () => {
           </div>
         )}
         {characters.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
             {characters.map((character) => (
-              <Card key={character.id} character={character} />
+              <Card key={character.id} character={character}  />
             ))}
           </div>
         ) : (
@@ -36,7 +37,7 @@ const Cards = () => {
         )}
       </>
     );
-  }
+  }else return <div className="flex my-20 justify-center">  <StageSpinner  size={50} color="#686769" loading={loading} /></div>
 };
 
 export default Cards;

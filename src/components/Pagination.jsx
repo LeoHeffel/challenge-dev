@@ -15,12 +15,13 @@ const Pagination = () => {
     const { pages, next, prev } = paginationInfo;
 
     return (
-      <div className="flex flex-col items-center my-4">
+      <div className="grid grid-cols-1 ">
+      <div className="flex flex-col justify-self-center my-4">
         {/* Help text */}
-        <span className="text-sm text-gray-700 dark:text-gray-400">
+        <span className="text-sm text-gray-400">
           Showing <span className="font-semibold text-white">{page}</span> of{" "}
           <span className="font-semibold text-white">{pages}</span> of{" "}
-          <span className="font-semibold text-gray-900 dark:text-white"></span>{" "}
+          <span className="font-semibold  text-white"></span>{" "}
           Pages
         </span>
         <div className="inline-flex mt-2 xs:mt-0">
@@ -30,7 +31,7 @@ const Pagination = () => {
             onClick={() => setPage(prev)}
             className={`${
               page <= 1 ? "cursor-not-allowed " : ""
-            } flex  items-center justify-center px-4 h-10 text-base font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
+            } flex  items-center justify-center px-4 h-10 text-base font-medium border-0 border-e  rounded-s  bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white`}
           >
             <svg
               className="w-3.5 h-3.5 me-2 rtl:rotate-180"
@@ -54,7 +55,7 @@ const Pagination = () => {
             onClick={() => setPage(next)}
             className={`${
               page >= pages ? "cursor-not-allowed " : ""
-            } flex  items-center justify-center px-4 h-10 text-base font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
+            } flex  items-center justify-center px-4 h-10 text-base font-medium  border-0 border-s  rounded-e  bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white`}
           >
             Next
             <svg
@@ -75,6 +76,7 @@ const Pagination = () => {
           </button>
         </div>
       </div>
+    </div>
     );
   }
 };

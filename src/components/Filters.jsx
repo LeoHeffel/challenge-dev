@@ -50,7 +50,7 @@ const Filters = () => {
           <select
             onChange={handleChange}
             name="status"
-            className="block w-full p-2 mb-6 text-sm mt-4 ps-10 text-smborder  rounded-lg  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+            className="block w-full p-2 mb-6 text-sm mt-4 ps-10 text-smborder  rounded-lg  bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
           >
             <option >Status...</option>
             <option value="Alive">Alive</option>
@@ -62,7 +62,7 @@ const Filters = () => {
           <select
             onChange={handleChange}
             name="species"
-            className="block w-full p-2 mb-6 text-sm mt-4 ps-10 text-smborder  rounded-lg  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+            className="block w-full p-2 mb-6 text-sm mt-4 ps-10 text-smborder  rounded-lg  bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
           >
             <option >
               Species...
@@ -88,7 +88,7 @@ const Filters = () => {
             onChange={handleChange}
             id="small"
             name="gender"
-            className="block w-full p-2 mb-6 text-sm mt-4 ps-10 text-smborder  rounded-lg  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+            className="block w-full p-2 mb-6 text-sm mt-4 ps-10 text-smborder  rounded-lg  bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
           >
             <option >Gender...</option>
             <option value="Female">Female</option>
@@ -101,7 +101,7 @@ const Filters = () => {
           <input
             type="reset"
             value="Reset Filters"
-            className=" block w-full p-2 mb-6  ps-10 text-smborder  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mt-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            className=" block w-full p-2 mb-6  ps-10 text-smborder  text-white focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mt-4 bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-blue-800"
           />
         </div>
       </div>

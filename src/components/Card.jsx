@@ -5,7 +5,7 @@ const Card = ({ character }) => {
   const { name, id, image } = character;
   const { setDetailsId } = useContext(QueryContext);
   return (
-    <div className=" rounded-lg shadow relative max-h-48 max-w-48">
+    <div className=" rounded-lg shadow relative max-h-48 max-w-48 justify-self-center">
       <button onClick={() => setDetailsId(id)}>
         <img
           className="rounded-lg  max-h-48 "
