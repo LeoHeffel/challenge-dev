@@ -15,7 +15,8 @@ const Pagination = () => {
     const { pages, next, prev } = paginationInfo;
 
     return (
-      <div className="flex flex-col items-center my-4">
+      <div className="grid grid-cols-1 ">
+      <div className="flex flex-col justify-self-center my-4">
         {/* Help text */}
         <span className="text-sm text-gray-400">
           Showing <span className="font-semibold text-white">{page}</span> of{" "}
@@ -75,6 +76,7 @@ const Pagination = () => {
           </button>
         </div>
       </div>
+    </div>
     );
   }
 };

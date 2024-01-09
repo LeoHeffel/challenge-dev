@@ -7,10 +7,16 @@ import Filters from "../components/Filters"
 const LayoutRoot= ()=>{
     return (
         <div className="max-w-7xl mx-auto">
-           <Search/>
+            <nav className="sticky top-0 z-50 bg-black ">
+                <Search/>
            <Filters/>
-           <Pagination/>
+            </nav>
+           
            <Outlet/>
+           <footer className="sticky bottom-0 z-50 bg-black ">
+             <Pagination/>
+           </footer>
+          
         </div>
     )
 }
